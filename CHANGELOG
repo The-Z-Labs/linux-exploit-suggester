@@ -1,0 +1,63 @@
+
+linux-exploit-suggester.sh v1.0 [2019-03-01]
+
+o Added additional 'Tags' for multiple exploits based on:
+
+  + verifications conducted by bcoles and his notes at: https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/linux/local
+
+  + https://github.com/lucyoa/kernel-exploits
+
+o Added following '--checksec' mode improvements:
+
+  + added checks for all exploitation prevention features recommended by
+    KSPP Project (http://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings)
+
+  + handling situation when no kernel config is present on checked system (putting state 'unknown'
+    when existence/enablement of the feature can't be determined)
+
+  + support for features that have more then two states possible (e.g. CONFIG_SECCOMP)
+
+o Sorting exploits functionality added. Sorting is done by dynamically calculated rank.
+  Now most relevant exploits are listed and the top of the listing.
+
+o Added check for Linux Kernel Runtime Guard (LKRG) (#36) [bcoles]
+
+o Added bin-url for msf cross-compiled exploits (#32) [bcoles]
+
+o Added support for pacman packages (#30) [bcoles]
+
+o Improved 'tag matching functionality'
+
+o Added support for additional distros (#29) [bcoles]
+
+o Added following exploits:
+
+  + added dirty_sock exploit (#41) [bcoles]
+
+  + added s-nail-privsep exploit (#39) [bcoles]
+
+  + added subuid_shell (CVE-2018-18955) exploit (#34) [bcoles]
+
+  + added raptor_xorgy exploit (#35) [bcoles]
+
+  + added vpnc_privesc.py (CVE-2018-10900) exploit (#31) [bcoles]
+
+  + added ntfs-3g-modprobe (CVE-2017-0358) exploit (#22) [bcoles]
+
+o Refinements for following exploits:
+
+  + update eBPF_verifier (CVE-2017-16995) (#28) 
+
+  + added more specific info for 'dirtycow' exploits
+
+  + updated tags for userhelper and RDS exploits (#25) [bcoles]
+
+  + Changed kernel-exploits.com URLs to archive.org (multiple exploits) (#24) [bcoles]
+
+  + updated 'udev' exploit requirements (#20) [bcoles]
+
+  + added 'src-url' for 'BadIRET' exploit
+
+  + added alternative urls for 'af_packet' and 'NETIF_F_UFO' exploits
+
+o Added this CHANGELOG file to the repository.
